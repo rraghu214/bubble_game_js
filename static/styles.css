@@ -1,0 +1,18 @@
+*{box-sizing: border-box;}
+html,body,#game{height:100%;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
+#game{display:flex;align-items:center;justify-content:center;background:#eef8ff}
+#game{position:relative}
+
+/* place the video behind the canvas so bubbles appear on top */
+#input_video{position:absolute;left:0;top:0;z-index:0;border-radius:10px;object-fit:cover}
+
+canvas{background:transparent;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.12);position:relative;z-index:1}
+#hud{position:absolute;top:12px;left:12px;color:#111}
+#score{font-size:20px;font-weight:bold;margin-bottom:6px}
+#controls button{margin-right:6px}
+#overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.95);padding:24px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.2);text-align:center;z-index:10;min-width:260px}
+.hidden{display:none}
+
+/* responsive canvas */
+#gameCanvas{width:900px;height:600px}
+@media (max-width:900px){#gameCanvas{width:calc(100vw - 40px);height:calc((100vw - 40px) * 0.66)}}

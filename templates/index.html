@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bubble Pop (Web)</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div id="game">
+    <canvas id="gameCanvas"></canvas>
+    <div id="hud">
+      <div id="score">Score: 0</div>
+      <div id="controls">
+    <button id="muteBtn">Mute</button>
+    <button id="restartBtn">Restart</button>
+    <button id="cameraBtn">Use Camera</button>
+  <!-- Mirror enabled by default; mirror toggle removed -->
+      </div>
+    </div>
+    <div id="overlay" class="hidden">
+      <h1>GAME OVER!</h1>
+      <p id="finalScore"></p>
+      <button id="overlayRestart">Play Again</button>
+    </div>
+  </div>
+  
+  <!-- video element used by MediaPipe hands (activated when user allows camera)
+    Video is shown while camera is active to help debugging and confirm stream. -->
+  <video id="input_video" style="display:none;position:absolute;right:12px;bottom:12px;width:240px;height:180px;border:2px solid rgba(0,0,0,0.12);border-radius:8px;object-fit:cover;background:#000" playsinline muted></video>
+
+  <audio id="popSound" src="/pop.wav" preload="auto"></audio>
+  <audio id="gameOverSound" src="/game-over.wav" preload="auto"></audio>
+
+  <!-- MediaPipe (browser) - loaded from CDN; safe to remove if you don't want camera feature -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+  <script src="/static/game.js"></script>
+</body>
+</html>

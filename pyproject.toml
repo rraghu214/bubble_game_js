@@ -1,0 +1,20 @@
+[project]
+name = "bubble-game"
+version = "0.1.0"
+description = "Hand gesture controlled bubble popping game using JS"
+authors = [
+    { name = "Raghu Rammohan", email = "rraghu214@outlook.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mediapipe",
+    "Flask==2.2.5"
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "black",
+    "isort"
+]
